@@ -1,5 +1,3 @@
-import com.scalaprog.Documentation
-
 /**
  * User: soren
  */

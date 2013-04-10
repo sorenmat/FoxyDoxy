@@ -23,8 +23,6 @@ public class YetAnotherJavaTestFile {
      * this is not
      * @param name
      */
-    @Documentation(text="This is a test\n" +
-            "This tooo")
     public void test(String name) {
 
     }
