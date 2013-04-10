@@ -1,0 +1,14 @@
+{
+  "sections": [
+    {
+      "section": "Startup",
+      "tags": {},
+      "content": "\u003ch1\u003eThis is yet another simple piece of documentation\u003c/h1\u003e\u003cp\u003eStill cooler than java doc...\u003c/p\u003e"
+    },
+    {
+      "section": "Configuration",
+      "tags": {},
+      "content": "\u003ch1\u003eThis is simple piece of documentation\u003c/h1\u003e\u003cp\u003eThis is so more cool than normal java doc.\u003c/p\u003e"
+    }
+  ]
+}
