@@ -32,7 +32,6 @@ class FoxyDoxy {
       None
     }).flatten
 
-    println(sections)
     Template(sections)
   }
 }
@@ -60,9 +59,7 @@ object FoxyDoxy {
 
     val gson = new GsonBuilder().setPrettyPrinting().create()
     val data =  new FoxyDoxy().parseUsingQDox(config.sourceDirectory) //Template(sections)
-    println(data)
-    println("----------------")
-    println(gson.toJson(data))
+
     config.templateFile match {
       case Some(x) =>
       case None => IOUtils.copy(getClass.getResourceAsStream("template.html"), new FileOutputStream(outputDir+"template.html"))
@@ -70,7 +67,6 @@ object FoxyDoxy {
     val templateFile = new FileOutputStream(config.templateFile.getOrElse(outputDir+"template.json"))
     writeToFile(templateFile, gson.toJson(data))
 
-    //new FoxyDoxy().testing
   }
 
 
