@@ -103,7 +103,7 @@
 
         toolTip = "<a href=\"#\" class=\"label label-info\" style=\"float: right\" id=\"example\"  rel=\"popover\" data-content={{fileName}} data-original-title=\"Source\">Source file</a>"
         template = "{{#sections}} <li><a href=#{{section}}>{{section}}</a></li> {{/sections}}";
-        docContent = "{{#sections}}<div class=\"row-fluid\"><div class=\"span8\">{{& content}}<br/>"+toolTip+"</div></div>{{/sections}}"
+        docContent = "{{#sections}}<div class=\"row-fluid\"><div class=\"span8\">{{& content}}<br/>"+toolTip+"<br/><br/><br/></div></div>{{/sections}}"
 
 
         $.getJSON("template.json", function(json) {

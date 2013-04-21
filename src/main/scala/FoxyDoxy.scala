@@ -1,42 +1,14 @@
 import com.google.gson.GsonBuilder
 import com.scalaprog.foxydoxy.cli.CommandLineConfiguration
-import com.thoughtworks.qdox.JavaDocBuilder
 import org.apache.commons.io.IOUtils
-import org.pegdown.PegDownProcessor
 import org.sellmerfud.optparse.OptionParser
 import java.io._
-import scala.io._
 
 /**
  * User: soren
  */
 class FoxyDoxy {
- /*
-  def parseUsingQDox(srcDir: String) = {
 
-    val DOCUMENTATION: String = "documentation"
-    val SECTION: String = "section"
-    val TAGS: String = "tags"
-
-    val builder = new JavaDocBuilder();
-    builder.addSourceTree(new File(srcDir));
-    val sections = builder.getSources.map(source => {
-
-      val tag = source.getClasses.head.getTagByName(DOCUMENTATION)
-      if (tag != null) {
-        val section = source.getClasses.head.getTagByName(SECTION)
-        val tags = source.getClasses.head.getTagsByName(TAGS)
-        println(tag.getValue)
-        val rawText = tag.getValue
-        val html = new PegDownProcessor().markdownToHtml(rawText)
-        Some(Section(section.getValue, tags.map(t => t.getValue).toList, html))
-      } else
-        None
-    }).flatten
-
-    Template(sections)
-  }
-   */
   def parseSourceDirectory(srcDir: String, foundSections: List[Section]): List[Section] = {
     val cwd = new File(srcDir)
     if (cwd.isDirectory) {
@@ -46,10 +18,11 @@ class FoxyDoxy {
       return found ::: foundSections
     }
     else {
-      println(cwd.getCanonicalPath)
       val sourceFile = cwd.getCanonicalPath
-      if (sourceFile.endsWith(".java")) {
+      if (sourceFile.endsWith(".java") || sourceFile.endsWith(".scala")) {
         val f = SourceCodeParser.parseToSections(sourceFile)
+        if(!f.isEmpty)
+          println("Added documentation for "+sourceFile)
         return f ::: foundSections
 
       } else foundSections
@@ -104,4 +77,4 @@ object FoxyDoxy {
 
 case class Template(val sections: Array[Section])
 
-case class Section(val fileName: String ,val section: String, val tags: List[String], val content: String)
+case class Section(val fileName: String, val section: String, val tags: List[String], val content: String)

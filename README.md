@@ -10,7 +10,7 @@ included in the documentation.
 In order to structure the documentation, there is an option to specify a @section tag. If multiple @documentation annotations include
 the same section tag, the are sorted by the @priority tag.
 
-# Tags
+## Tags
 __@documentaion__ The main tag, should be included in comment in order for Foxy Doxy to process it.
 
 __@section__ What section does this piece of documentation belongs to.

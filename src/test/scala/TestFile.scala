@@ -1,5 +1,5 @@
 /**
- * @Documentation
+ * @documentation
  *
  * # This is simple piece of documentation written in a scala class
  *
