@@ -1,8 +1,11 @@
+package com.scalaprog.foxydoxy
+
 import com.google.gson.GsonBuilder
 import com.scalaprog.foxydoxy.cli.CommandLineConfiguration
-import org.apache.commons.io.IOUtils
+import java.io.{OutputStream, InputStream, FileOutputStream}
 import org.sellmerfud.optparse.OptionParser
-import java.io._
+
+import java.io.File
 
 /**
  * User: soren
@@ -21,8 +24,8 @@ class FoxyDoxy {
       val sourceFile = cwd.getCanonicalPath
       if (sourceFile.endsWith(".java") || sourceFile.endsWith(".scala")) {
         val f = SourceCodeParser.parseToSections(sourceFile)
-        if(!f.isEmpty)
-          println("Added documentation for "+sourceFile)
+        if (!f.isEmpty)
+          println("Added documentation for " + sourceFile)
         return f ::: foundSections
 
       } else foundSections
@@ -30,7 +33,6 @@ class FoxyDoxy {
 
   }
 }
-
 
 object FoxyDoxy {
   def main(args: Array[String]) {
@@ -57,13 +59,35 @@ object FoxyDoxy {
     val data = Template(new FoxyDoxy().parseSourceDirectory(config.sourceDirectory, Nil).toArray)
     config.templateFile match {
       case Some(x) =>
-      case None => IOUtils.copy(getClass.getResourceAsStream("template.html"), new FileOutputStream(outputDir + "template.html"))
+      case None => {
+        val inputFile: InputStream = Thread.currentThread().getContextClassLoader.getResourceAsStream("template.html")
+        copyFile(inputFile, new FileOutputStream(outputDir + "template.html"))
+      }
     }
     val templateFile = new FileOutputStream(config.templateFile.getOrElse(outputDir + "template.json"))
     writeToFile(templateFile, gson.toJson(data))
 
   }
 
+  def use[T <: { def close(): Unit }](closable: T)(block: T => Unit) {
+    try {
+      block(closable)
+    }
+    finally {
+      closable.close()
+    }
+  }
+
+  def copyFile(input: InputStream, output: OutputStream) {
+    use(input) { in =>
+      use(output) { out =>
+        val buffer = new Array[Byte](1024)
+        Iterator.continually(in.read(buffer))
+          .takeWhile(_ != -1)
+          .foreach { out.write(buffer, 0 , _) }
+      }
+    }
+  }
 
   def writeToFile(p: OutputStream, s: String) {
     val pw = new java.io.PrintWriter(p)

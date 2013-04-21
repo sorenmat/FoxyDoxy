@@ -1,3 +1,5 @@
+package com.scalaprog.foxydoxy
+
 import java.io.File
 import org.pegdown.PegDownProcessor
 import scala.io.Source
