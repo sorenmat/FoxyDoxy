@@ -1,6 +1,7 @@
 import sbt._
 import Process._
 import Keys._
+import AssemblyKeys._ // put this at the top of the file
 
 name := "foxydoxy"
 
@@ -21,3 +22,5 @@ libraryDependencies += "com.google.code.gson" % "gson" % "2.2.2"
 libraryDependencies += "org.sellmerfud" % "optparse_2.10" % "2.0"
 
 libraryDependencies += "commons-io" % "commons-io" % "2.4"
+
+assemblySettings
