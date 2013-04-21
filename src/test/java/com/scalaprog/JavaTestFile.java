@@ -3,7 +3,7 @@ package com.scalaprog;
  * User: soren
  */
 /**
- * @Documentation
+ * @documentation
  *
  * # This is simple piece of documentation
  *
@@ -15,10 +15,6 @@ package com.scalaprog;
 public class JavaTestFile {
 
 
-    /*
-     * This is a simple test of java doc...
-     * @documentation
-     */
     /**
      * this is not
      * @param name

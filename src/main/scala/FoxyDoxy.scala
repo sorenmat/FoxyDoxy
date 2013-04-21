@@ -5,12 +5,13 @@ import org.apache.commons.io.IOUtils
 import org.pegdown.PegDownProcessor
 import org.sellmerfud.optparse.OptionParser
 import java.io._
+import scala.io._
 
 /**
  * User: soren
  */
 class FoxyDoxy {
-
+ /*
   def parseUsingQDox(srcDir: String) = {
 
     val DOCUMENTATION: String = "documentation"
@@ -34,6 +35,26 @@ class FoxyDoxy {
     }).flatten
 
     Template(sections)
+  }
+   */
+  def parseSourceDirectory(srcDir: String, foundSections: List[Section]): List[Section] = {
+    val cwd = new File(srcDir)
+    if (cwd.isDirectory) {
+      val found = cwd.listFiles().map(file => {
+        parseSourceDirectory(file.getCanonicalPath, foundSections)
+      }).flatten.toList
+      return found ::: foundSections
+    }
+    else {
+      println(cwd.getCanonicalPath)
+      val sourceFile = cwd.getCanonicalPath
+      if (sourceFile.endsWith(".java")) {
+        val f = SourceCodeParser.parseToSections(sourceFile)
+        return f ::: foundSections
+
+      } else foundSections
+    }
+
   }
 }
 
@@ -59,8 +80,8 @@ object FoxyDoxy {
     val outputDir = config.outputDirectory + File.separator
 
     val gson = new GsonBuilder().setPrettyPrinting().create()
-    val data = new FoxyDoxy().parseUsingQDox(config.sourceDirectory) //Template(sections)
-
+    //val data = new FoxyDoxy().parseUsingQDox(config.sourceDirectory) //Template(sections)
+    val data = Template(new FoxyDoxy().parseSourceDirectory(config.sourceDirectory, Nil).toArray)
     config.templateFile match {
       case Some(x) =>
       case None => IOUtils.copy(getClass.getResourceAsStream("template.html"), new FileOutputStream(outputDir + "template.html"))
@@ -83,4 +104,4 @@ object FoxyDoxy {
 
 case class Template(val sections: Array[Section])
 
-case class Section(val section: String, val tags: List[String], val content: String)
+case class Section(val fileName: String ,val section: String, val tags: List[String], val content: String)

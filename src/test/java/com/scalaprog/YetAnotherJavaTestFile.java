@@ -15,10 +15,6 @@ package com.scalaprog;
 public class YetAnotherJavaTestFile {
 
 
-    /*
-     * This is a simple test of java doc...
-     * @documentation
-     */
     /**
      * this is not
      * @param name
