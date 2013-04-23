@@ -47,3 +47,22 @@ Foxy Doxy version 0.1
     -o, --output DIRECTORY           Directory where output files will be placed
     -h, --help                       Show this message
 ```
+
+## Example usage
+```
+package com.scalaprog;
+/**
+ * @documentation
+ *
+ * # This is simple piece of documentation
+ *
+ * This is so more cool than normal java doc.
+ *
+ * @section Configuration
+ * @tags test, demo, simple
+ */
+public class JavaTestFile {
+
+}
+```
+
