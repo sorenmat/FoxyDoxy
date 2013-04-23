@@ -7,9 +7,12 @@ How does this differ from JavaDoc ?
 
 JavaDoc was designed to document Java APIs, and is good at that. But in order for the user to find some documentation,
 you need to know what class to look for.
+
 Sometimes you need an other kind of documentation. Let's say you would describe the flow of the application, the bootstrapping process or some other kind
 that spans multiple classes and concepts.
+
 But at the same time you need it close to the source code, in order for it to be kept up to date.
+
 __Then Foxy Doxy is the tool for you.__
 
 
