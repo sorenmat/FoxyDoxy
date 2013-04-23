@@ -101,7 +101,7 @@
     $(document).ready(function(){
         var html, template;
 
-        toolTip = "<a href=\"#\" class=\"label label-info\" style=\"float: right\" id=\"example\"  rel=\"popover\" data-content={{fileName}} data-original-title=\"Source\">Source file</a>"
+        toolTip = "<a href=\"#\" class=\"label label-info\" style=\"float: right\" id={{id}}  rel=\"popover\" data-content={{fileName}} data-original-title=\"Source\">Source file</a>"
         template = "{{#sections}} <li><a href=#{{section}}>{{section}}</a></li> {{/sections}}";
         docContent = "{{#sections}}<div class=\"row-fluid\"><div class=\"span8\">{{& content}}<br/>"+toolTip+"<br/><br/><br/></div></div>{{/sections}}"
 
@@ -115,9 +115,14 @@
             var docHtml = Mustache.to_html(docContent, json)
             $("#docContent").html(docHtml);
 
-            $(function ()
-            { $("#example").popover();
-            });
+            var length = json.sections.length;
+            for (var i = 0; i < length; i++) {
+                element = json.sections[i];
+                $(function ()
+                {
+                    $("#"+element.id).popover();
+                });
+            }
         });
 
 

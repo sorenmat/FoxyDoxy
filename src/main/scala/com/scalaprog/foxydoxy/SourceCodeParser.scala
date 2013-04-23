@@ -3,6 +3,7 @@ package com.scalaprog.foxydoxy
 import java.io.File
 import org.pegdown.PegDownProcessor
 import scala.io.Source
+import java.util.UUID
 
 /**
  * User: soren
@@ -18,7 +19,7 @@ object SourceCodeParser {
       map(line => if (line.contains("*")) line.substring(line.indexOf("*") + 1, line.length) else line)
   }
 
-  def parseToSections(file: String) = {
+  def parseToSections(baseDir: File, file: String) = {
 
     val sectionRegExp = """(@section )(.*)""".r
     val tagsRegExp = """(@tags )(.*)""".r
@@ -35,7 +36,8 @@ object SourceCodeParser {
       val textWithoutTags = text.split("\n").filterNot(line => line.contains("@documentation") || line.contains("@tags") || line.contains("@section"))
       val cleanText = removeStarsFromText(textWithoutTags).mkString("\n").trim
       val html = new PegDownProcessor().markdownToHtml(cleanText)
-      Section(file, section, tags, html)
+      val fileName = file.replaceAll(baseDir.getCanonicalPath, "") // make directory relative.
+      Section(UUID.randomUUID().toString, fileName, section, tags, html)
     })
     docs.toList
   }
