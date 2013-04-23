@@ -29,3 +29,15 @@ __@documentaion__ The main tag, should be included in comment in order for Foxy 
 __@section__ What section does this piece of documentation belongs to.
 
 __@tags__ A comma separated list containg some keywords that describes the section.
+
+## How to use it.
+
+Download the current binary from here [link]
+
+```
+Foxy Doxy version 0.1
+    -s, --source DIRECTORY           Source directory to scan for documentation
+    -t, --template FILE              Choose non default template
+    -o, --output DIRECTORY           Directory where output files will be placed
+    -h, --help                       Show this message
+```
