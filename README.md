@@ -58,7 +58,7 @@ package com.scalaprog;
  *
  * # This is simple piece of documentation
  *
- * This is so more cool than normal java doc.
+ * This is so much more cool than normal java doc.
  *
  * @section Configuration
  * @tags test, demo, simple
