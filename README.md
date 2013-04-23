@@ -34,8 +34,11 @@ __@tags__ A comma separated list containg some keywords that describes the secti
 
 Download the current binary from here http://dl.bintray.com/content/sorenmat/FoxyDoxy/foxydoxy-assembly-0.1.jar?direct
 
+Default values for source directory is src, and output directory is doc.
+
+
 ```
-java -jar foxydoxy-assembly-0.1.jar
+java -jar foxydoxy-assembly-0.1.jar --help
 ```
 ```
 Foxy Doxy version 0.1
