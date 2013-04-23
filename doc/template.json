@@ -1,0 +1,18 @@
+{
+  "sections": [
+    {
+      "id": "dd5ea3e9-95a4-4dbe-91c4-0e0ed0d1f951",
+      "fileName": "/test/java/com/scalaprog/JavaTestFile.java",
+      "section": " Sample",
+      "tags": {},
+      "content": "\u003ch1\u003eFoxy Doxy\u003c/h1\u003e\u003cp\u003eThis is a library for generating documentation from the code base.\u003c/p\u003e\u003cp\u003eHow does this differ from JavaDoc ?\u003c/p\u003e\u003cp\u003eJavaDoc was designed to document Java APIs, and is good at that. But in order for the user to find the documentation,  you need to know what class to look for.\u003c/p\u003e\u003cp\u003eSometimes you need an other kind of documentation. Let\u0027s say you would describe the flow of the application, the bootstrapping process or some other kind  that spans multiple classes and concepts.\u003c/p\u003e\u003cp\u003eBut at the same time you need it close to the source code, in order for it to be kept up to date.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eThen Foxy Doxy is the tool for you.\u003c/strong\u003e\u003c/p\u003e"
+    },
+    {
+      "id": "5f0df666-f68a-4f60-8750-6f57bd4a7e50",
+      "fileName": "/test/scala/TestFile.scala",
+      "section": " Scala Test",
+      "tags": {},
+      "content": "\u003ch1\u003eThis is simple piece of documentation written in a scala class\u003c/h1\u003e\u003cp\u003eThis is so more cool than normal scala doc.\u003c/p\u003e"
+    }
+  ]
+}
