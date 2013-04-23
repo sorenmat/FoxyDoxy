@@ -35,6 +35,9 @@ __@tags__ A comma separated list containg some keywords that describes the secti
 Download the current binary from here http://dl.bintray.com/content/sorenmat/FoxyDoxy/foxydoxy-assembly-0.1.jar?direct
 
 ```
+java -jar foxydoxy-assembly-0.1.jar
+```
+```
 Foxy Doxy version 0.1
     -s, --source DIRECTORY           Source directory to scan for documentation
     -t, --template FILE              Choose non default template
