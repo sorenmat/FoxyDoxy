@@ -15,6 +15,8 @@ But at the same time you need it close to the source code, in order for it to be
 
 __Then Foxy Doxy is the tool for you.__
 
+Check out the generated result at [http://sorenmat.github.io/FoxyDoxy/doc/template.html](Sample)
+
 
 
 ## How it works
