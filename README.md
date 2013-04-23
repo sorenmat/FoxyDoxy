@@ -49,7 +49,7 @@ Foxy Doxy version 0.1
 ```
 
 ## Example usage
-```
+```java
 package com.scalaprog;
 /**
  * @documentation
