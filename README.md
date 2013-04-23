@@ -5,7 +5,7 @@ This is a library for generating documentation from the code base.
 
 How does this differ from JavaDoc ?
 
-JavaDoc was designed to document Java APIs, and is good at that. But in order for the user to find some documentation,
+JavaDoc was designed to document Java APIs, and is good at that. But in order for the user to find the documentation,
 you need to know what class to look for.
 
 Sometimes you need an other kind of documentation. Let's say you would describe the flow of the application, the bootstrapping process or some other kind
