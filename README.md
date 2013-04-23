@@ -32,7 +32,7 @@ __@tags__ A comma separated list containg some keywords that describes the secti
 
 ## How to use it.
 
-Download the current binary from here [http://dl.bintray.com/content/sorenmat/FoxyDoxy/foxydoxy-assembly-0.1.jar?direct]
+Download the current binary from here http://dl.bintray.com/content/sorenmat/FoxyDoxy/foxydoxy-assembly-0.1.jar?direct
 
 ```
 Foxy Doxy version 0.1
