@@ -64,16 +64,7 @@ object FoxyDoxy {
     config.templateFile match {
       case Some(x) =>
       case None => {
-        var inputFile: InputStream = Thread.currentThread().getContextClassLoader.getResourceAsStream("template.html")
-        if (inputFile == null)
-          inputFile = this.getClass.getResourceAsStream("template.html")
-        if (inputFile == null)
-          inputFile = ClassLoader.getSystemResourceAsStream("template.html");
-        if (inputFile == null)
-          inputFile = this.getClass.getClassLoader.getResourceAsStream("template.html")
-        if (inputFile == null) {
-          throw new RuntimeException("unable to find template file.")
-        }
+        val inputFile: InputStream = Thread.currentThread().getContextClassLoader.getResourceAsStream("template.html")
         copyFile(inputFile, new FileOutputStream(outputDir + "template.html"))
       }
     }
