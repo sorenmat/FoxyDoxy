@@ -3,7 +3,7 @@ Foxy Doxy
 
 This is a library for generating documentation from the code base.
 
-How does this differ from JavaDoc ?
+__How does this differ from JavaDoc ?__
 
 JavaDoc was designed to document Java APIs, and is good at that. But in order for the user to find the documentation,
 you need to know what class to look for.
@@ -12,6 +12,16 @@ Sometimes you need an other kind of documentation. Let's say you would describe 
 that spans multiple classes and concepts.
 
 But at the same time you need it close to the source code, in order for it to be kept up to date.
+
+__What languages are supported ?__
+Foxy Doxy has only been tested on Java and Scala, but any language that supports c style comments should work.
+So if your language of choice supportes the following comment style, you are good to go.
+```
+/**
+ * This is a comment
+ *
+*/
+```
 
 __Then Foxy Doxy is the tool for you.__
 
