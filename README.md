@@ -29,7 +29,9 @@ So if your language of choice supportes the following comment style, you are goo
 
 
 
-Check out the generated result [here](http://sorenmat.github.io/FoxyDoxy/doc/template.html)
+__Example of generated docs__
+
+Documentation generated from the classes in the test directory. Here are the [result](http://sorenmat.github.io/FoxyDoxy/doc/template.html)
 
 
 
