@@ -14,8 +14,11 @@ that spans multiple classes and concepts.
 But at the same time you need it close to the source code, in order for it to be kept up to date.
 
 __What languages are supported ?__
+
 Foxy Doxy has only been tested on Java and Scala, but any language that supports c style comments should work.
+
 So if your language of choice supportes the following comment style, you are good to go.
+
 ```
 /**
  * This is a comment
