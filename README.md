@@ -13,6 +13,9 @@ that spans multiple classes and concepts.
 
 But at the same time you need it close to the source code, in order for it to be kept up to date.
 
+Then Foxy Doxy is the tool for you.
+
+
 __What languages are supported ?__
 
 Foxy Doxy has only been tested on Java and Scala, but any language that supports c style comments should work.
@@ -24,7 +27,7 @@ So if your language of choice supportes the following comment style, you are goo
     */
 
 
-__Then Foxy Doxy is the tool for you.__
+
 
 Check out the generated result [here](http://sorenmat.github.io/FoxyDoxy/doc/template.html)
 
