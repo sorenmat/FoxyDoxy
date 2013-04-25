@@ -19,12 +19,10 @@ Foxy Doxy has only been tested on Java and Scala, but any language that supports
 
 So if your language of choice supportes the following comment style, you are good to go.
 
-```java
-/**
- * This is a comment
- *
-*/
-```
+    /**
+     * This is a comment
+    */
+
 
 __Then Foxy Doxy is the tool for you.__
 
