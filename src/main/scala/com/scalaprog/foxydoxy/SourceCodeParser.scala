@@ -36,7 +36,7 @@ object SourceCodeParser {
       val textWithoutTags = text.split("\n").filterNot(line => line.contains("@documentation") || line.contains("@tags") || line.contains("@section"))
       val cleanText = removeStarsFromText(textWithoutTags).mkString("\n").trim
       val html = new PegDownProcessor().markdownToHtml(cleanText)
-      val fileName = file.replaceAll(baseDir.getCanonicalPath, "") // make directory relative.
+      val fileName = file.replace(baseDir.getCanonicalPath, "") // make directory relative.
       Section(UUID.randomUUID().toString, fileName, section, tags, html)
     })
     docs.toList
